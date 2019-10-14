@@ -18,7 +18,8 @@ class SendMessageContainer extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { input } = this.state;
-    const message = { message: input, author: "You" };
+    const { user } = this.props;
+    const message = { message: input, author: user };
     this.sendMessage(message);
     this.setState({ input: "" });
   }

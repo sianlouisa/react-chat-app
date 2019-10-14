@@ -1,8 +1,8 @@
 import React from "react";
 
-const ChatDisplayMessagesBubble = ({ previousMessage }) => {
+const ChatDisplayMessagesBubble = ({ previousMessage, className }) => {
   return (
-    <div className={`${previousMessage.author === 'You' ? 'sent-bubble' : 'received-bubble'} chat-display-messages-bubble`}>
+    <div className={`${className} chat-display-messages-bubble`}>
       {previousMessage.author === "You" ? null : <div className="author">{previousMessage.author}</div>}
       <div className="message">{previousMessage.message}</div>
       <div className="timestamp">{previousMessage.timestamp}</div>

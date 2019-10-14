@@ -1,10 +1,11 @@
 import React from 'react';
 import SendMessageContainer from "./components/send-message/send-message-container";
 import ChatDisplayMessagesList from "./components/chat-display/chat-display-messages-list";
+import Login from "./components/login/login";
 import { getAllMessages } from "./api/api"
 
 class App extends React.Component {
-  state = { previousMessages: [] }
+  state = { previousMessages: [], user: null }
   
   fetchMessages = () => {
     getAllMessages()
@@ -18,13 +19,21 @@ class App extends React.Component {
   updateMessages = () => {
     this.fetchMessages();
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const user = e.target.username.value;
+    this.setState({ user });
+  }
   
   render() {
-    const { previousMessages } = this.state;
+    const { previousMessages, user } = this.state;
     return (
       <div className="app">
-      <ChatDisplayMessagesList previousMessages={previousMessages} /> 
-      <SendMessageContainer updateMessages={this.updateMessages} />
+        <Login handleSubmit={this.handleSubmit} user={user}>
+          <ChatDisplayMessagesList previousMessages={previousMessages} user={user} /> 
+          <SendMessageContainer updateMessages={this.updateMessages} user={user} />
+        </Login>
       </div>
     );
   }
