@@ -1,5 +1,7 @@
 .chat-display-container {
-	border: 1px black solid;
+	border-radius: 5px 5px 0 0;
+	border: 1px #ccc solid;
 	height: 90%;
 	padding: 0 24px 16px 24px;
+	position: relative;
 }

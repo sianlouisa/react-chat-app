@@ -1,0 +1,41 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 24px; }
+
+.chat-display-container {
+  border-radius: 5px 5px 0 0;
+  border: 1px #ccc solid;
+  height: 90%;
+  padding: 0 24px 16px 24px;
+  position: relative; }
+
+.send-message-container {
+  background: #34b7eb;
+  border-radius: 0 0 5px;
+  height: 10%;
+  width: 100%;
+  padding: 8px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.textarea-input {
+  padding: 8px 8px;
+  resize: none;
+  width: 85%;
+  height: 100%;
+  margin-right: 8px;
+  border: white;
+  border-radius: 5px; }
+
+.custom-button {
+  height: 100%;
+  width: 15%;
+  background: #f7b14f;
+  border-radius: 5px;
+  border: #f7b14f;
+  color: white; }

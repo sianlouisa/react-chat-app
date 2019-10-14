@@ -1,11 +1,43 @@
 import React from "react";
+import TextareaInput from "../UI/textarea-input";
+import CustomButton from "../UI/custom-button";
+import { postMessage } from "../../api/api";
 
 class SendMessageContainer extends React.Component {
+  state = { input: "" }
+
+  sendMessage = (message) => {
+    postMessage(message);
+  }
+
+  handleChange = (e) => {
+    this.setState({ input: e.target.value });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { input } = this.state;
+    const message = { message: input, author: "You" };
+    this.sendMessage(message);
+    this.setState({ input: "" });
+  }
+
   render() {
+    const message = "Write your message here";
+    const { input } = this.state;
     return (
-      <div className="send-message-container">
-        SEND CONTAINER
-      </div>
+      <form className="send-message-container" onSubmit={this.handleSubmit}>
+        <TextareaInput
+          onChange={this.handleChange}
+          placeholder={message}
+          value={input}
+          title={message}
+          autoFocus />
+        <CustomButton
+          type="submit">
+          Send
+        </CustomButton>
+      </form>
     );
   }
 }
