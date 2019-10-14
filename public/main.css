@@ -4,13 +4,6 @@
   width: 100vw;
   height: 100vh; }
 
-.chat-display-container {
-  border-radius: 5px 5px 0 0;
-  border: 1px #ccc solid;
-  height: 90%;
-  padding: 0 24px 16px 24px;
-  position: relative; }
-
 .send-message-container {
   background: #34b7eb;
   border-radius: 0 0 5px;
@@ -40,10 +33,13 @@
   color: white; }
 
 .chat-display-messages-list {
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  border-radius: 5px 5px 0 0;
+  border: 1px #ccc solid;
+  height: 90%;
+  padding: 0 24px 16px 24px;
+  position: relative; }
 
 .chat-display-messages-bubble {
   border-radius: 3px;

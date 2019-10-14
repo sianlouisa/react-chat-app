@@ -8,6 +8,7 @@ class SendMessageContainer extends React.Component {
 
   sendMessage = (message) => {
     postMessage(message);
+    this.props.updateMessages();
   }
 
   handleChange = (e) => {
