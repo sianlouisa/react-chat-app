@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
-  padding: 24px; }
+  height: 100vh; }
 
 .chat-display-container {
   border-radius: 5px 5px 0 0;
@@ -39,3 +38,28 @@
   border-radius: 5px;
   border: #f7b14f;
   color: white; }
+
+.chat-display-messages-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.chat-display-messages-bubble {
+  border-radius: 3px;
+  border: 1px #ccc solid;
+  margin: 16px 0;
+  padding: 16px 16px 8px 16px;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column; }
+  .chat-display-messages-bubble .author,
+  .chat-display-messages-bubble .timestamp {
+    color: #ccc;
+    font-size: 14px; }
+
+.sent-bubble {
+  border: 1px red solid; }
+
+.received-bubble {
+  float: left; }

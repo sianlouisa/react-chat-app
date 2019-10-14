@@ -1,0 +1,23 @@
+.chat-display-messages-bubble {
+	border-radius: 3px;
+	border: 1px #ccc solid;
+	margin: 16px 0;
+	padding: 16px 16px 8px 16px;
+	max-width: 70%;
+	display: flex;
+	flex-direction: column;
+
+	.author,
+	.timestamp {
+		color: #ccc;
+		font-size: 14px;
+	}
+}
+
+.sent-bubble {
+	border: 1px red solid;
+}
+
+.received-bubble {
+	float: left;
+}
