@@ -1,12 +1,13 @@
 import React from "react";
+import { formatDate } from "../../utils/utils";
 
 const ChatDisplayMessagesBubble = ({ previousMessage, className }) => {
   return (
-    <div className={`${className} chat-display-messages-bubble`}>
+    <li className={`${className} chat-display-messages-bubble`}>
       {previousMessage.author === "You" ? null : <div className="author">{previousMessage.author}</div>}
       <div className="message">{previousMessage.message}</div>
-      <div className="timestamp">{previousMessage.timestamp}</div>
-    </div>
+      <div className="timestamp">{formatDate(previousMessage.timestamp)}</div>
+    </li>
   );
 }
 
