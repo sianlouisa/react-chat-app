@@ -14,16 +14,27 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchMessages();
+    this.loadUser();
   }
 
   updateMessages = () => {
     this.fetchMessages();
   }
 
+  saveUser = (user) => {
+    sessionStorage.setItem("user", user);
+  }
+
+  loadUser = () => {
+    const user = sessionStorage.getItem("user");
+    this.setState({ user });
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const user = e.target.username.value;
     this.setState({ user });
+    this.saveUser(user)
   }
   
   render() {

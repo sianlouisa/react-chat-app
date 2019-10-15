@@ -12,8 +12,9 @@ class Login extends React.Component {
     const { username } = this.state;
     const { children, handleSubmit, user } = this.props;
     return user === null ? (
-      <form className="login-container" onSubmit={handleSubmit}>
-        <input value={username} name="username" placeholder="Username" onChange={this.handleChange} />
+      <form className="login" onSubmit={handleSubmit}>
+        <h1 className="title">Enter your name to start chatting!</h1>
+        <input className="input" value={username} name="username" placeholder="Username" onChange={this.handleChange} />
         <CustomButton type="submit">Login</CustomButton>
       </form>
     ) : (

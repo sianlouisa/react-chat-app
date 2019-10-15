@@ -40,7 +40,9 @@
   height: 90%;
   padding: 0 24px 16px 24px;
   position: relative;
-  overflow: scroll; }
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: visible; }
 
 .chat-display-messages-bubble {
   border-radius: 3px;
@@ -60,5 +62,30 @@
   border: 1px #fffce3 solid; }
 
 .received-bubble {
-  float: left;
   border: 1px #ccc solid; }
+
+.login {
+  display: flex;
+  width: 25%;
+  height: 15%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
+  .login .title {
+    font-size: 18px; }
+  .login .input {
+    margin: 8px 0;
+    border-radius: 2px;
+    border: 1px #ccc solid;
+    padding: 8px; }
+  .login .custom-button {
+    width: 30%;
+    height: 25%; }
